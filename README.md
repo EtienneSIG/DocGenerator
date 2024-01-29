@@ -3,7 +3,10 @@ From script to markdown description files in few seconds
 
 # Technical Documentation
 
-## Module Dependencies
+## Mandatory - Python version
+Version >= 3.1X
+
+## Mandatory - Module Dependencies
 - ntpath
 - argparse
 - os
@@ -13,7 +16,7 @@ From script to markdown description files in few seconds
 - nltk
 - json
 
-## Configuration - Mandatory
+## Mandatory - Configuration
 The script uses a configuration file (config.json) to load the following parameters:
 - OPENAI_API_KEY: The API key for OpenAI.
 - OPENAI_API_BASE: The base endpoint for OpenAI.
