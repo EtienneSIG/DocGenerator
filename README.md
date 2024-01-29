@@ -13,7 +13,7 @@ From script to markdown description files in few seconds
 - nltk
 - json
 
-## Configuration
+## Configuration - Mandatory
 The script uses a configuration file (config.json) to load the following parameters:
 - OPENAI_API_KEY: The API key for OpenAI.
 - OPENAI_API_BASE: The base endpoint for OpenAI.
