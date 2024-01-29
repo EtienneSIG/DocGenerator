@@ -21,24 +21,6 @@ The script uses a configuration file (config.json) to load the following paramet
 - COMPLETIONS_MODEL: The ID of the model to be used for completions.
 - OPENAI_API_VERSION: The version of the OpenAI API to be used.
 
-## Function Definitions
-
-### get_token_count(prompt)
-This function takes a string input 'prompt' and returns the number of tokens in the string.
-
-### openaiTraduction(prompt, endpoint, key, model_id, api_version)
-This function performs the translation using OpenAI. It takes the following parameters:
-- 'prompt': the text to be translated.
-- 'endpoint': the OpenAI API endpoint.
-- 'key': the OpenAI API key.
-- 'model_id': the ID of the model to be used for the translation.
-- 'api_version': the version of the OpenAI API to be used.
-
-### writeOuput(strOpenAI, DocumentName)
-This function writes the translated text into a markdown file. It takes two parameters:
-- 'strOpenAI': the translated text.
-- 'DocumentName': the name of the output markdown file.
-
 ## Command Line Execution
 The script can be run from the command line with the following syntax:
 ```
