@@ -1,8 +1,6 @@
 # DocGenerator
 From script to markdown description files in few seconds
 
-# Technical Documentation
-
 ## Mandatory - Python version
 Version >= 3.1X
 
