@@ -6,10 +6,10 @@ From script to markdown description files in few seconds
  - Have an Azure Open AI service with GPT4 in your tenant ( https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal )
 
 ## Python requirement
-# version
+### version
 Version >= 3.1X
 
-# Dependencies
+### Dependencies
 - ntpath
 - argparse
 - os
