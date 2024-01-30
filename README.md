@@ -5,10 +5,11 @@ From script to markdown description files in few seconds
  - Have a computer vision service deployed in your tenant ( https://learn.microsoft.com/en-us/samples/azure/azure-quickstart-templates/cognitive-services-computer-vision-api/)
  - Have an Azure Open AI service with GPT4 in your tenant ( https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal )
 
-## Mandatory - Python version
+## Python requirement
+# version
 Version >= 3.1X
 
-## Mandatory - Module Dependencies
+# Dependencies
 - ntpath
 - argparse
 - os
