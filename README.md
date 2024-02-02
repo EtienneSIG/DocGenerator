@@ -1,7 +1,7 @@
 # DocGenerator
 From script to markdown description files in few seconds
 
-
+![DocGen.](https://github.com/EtienneSIG/DocGenerator/blob/main/screenShotDocGenerator.png)
 
 ## Azure requirement
  - Have an Azure Open AI service with GPT4 in your tenant ( https://learn.microsoft.com/en-us/azure/ai-services/openai/how-to/create-resource?pivots=web-portal )
