@@ -151,7 +151,7 @@ def openFile():
         initialdir="./", 
         title="Open Text file", 
         filetypes=(("Text Files", "*.txt"),
-                   ("Text Files", "*.python"),
+                   ("Text Files", "*.py"),
                    ("Text Files", "*.java"),)
         )
     FILE_NAME.set(str(os.path.splitext(os.path.basename(tf))[0]))
