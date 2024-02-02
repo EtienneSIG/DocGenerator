@@ -8,7 +8,19 @@ From script to markdown description files in few seconds
 ### version
 Version >= 3.1X (https://www.python.org/downloads/)
 
-## Mandatory - Configuration
+## Table of Contents
+1. [Configuration file](#Configuration-file)
+2. [Imports](#imports)
+3. [Prerequisites and Configuration Variables](#prerequisites-and-configuration-variables)
+4. [Core Functions](#core-functions)
+5. [GUI](#gui)
+6. [Launch the application](#app_launch)
+7. [Functional Documentation](#functionalDoc)
+
+
+<a name="Configuration-file"/>
+
+## 1. Configuration file
 The script uses a configuration file (config.json) to load the following parameters:
 - OPENAI_API_KEY: The API key for OpenAI.
 - OPENAI_API_BASE: The base endpoint for OpenAI.
@@ -16,12 +28,62 @@ The script uses a configuration file (config.json) to load the following paramet
 - COMPLETIONS_MODEL: The ID of the model to be used for completions.
 - OPENAI_API_VERSION: The version of the OpenAI API to be used.
 
-## Command Line Execution
+<a name="imports"/>
+
+## 2. Imports
+
+The script uses the following Python libraries:
+
+- Standard Libraries: `argparse`, `os`, `sys`, `subprocess`
+- OpenAI Library: `openai`
+- NLTK Library: `nltk`
+- JSON Library: `json`
+- GUI Libraries: `tkinter`, `ttk`, `tkinter.messagebox`, `tkinter.filedialog`
+
+<a name="prerequisites-and-configuration-variables"/>
+
+## 3. Prerequisites and Configuration Variables
+
+The script performs a sanity check to ensure that all required Python libraries are installed. If a library is missing, it attempts to install it using `pip`.
+
+It then checks the `config.json` file for necessary configuration values such as 'OPENAI_API_KEY', 'OPENAI_API_BASE', 'OPENAI_NB_TOKENS', 'COMPLETIONS_MODEL', 'OPENAI_API_VERSION'. If these values are not set, the script will exit with an error message.
+
+<a name="core-functions"/>
+
+## 4. Core Functions
+
+- `get_token_count(prompt)`: This function takes a string as an argument and returns the number of tokens in the string using NLTK's word_tokenize function.
+
+- `openaiTraduction(prompt,endpoint,key,model_id,api_version)`: This function takes a prompt and various OpenAI configuration parameters as arguments. It sends a request to the OpenAI API and returns the generated text.
+
+- `writeOutput(strOpenAI,DocumentName)`: This function takes a string and a document name as arguments. It writes the string to a markdown file with the given document name.
+
+<a name="gui"/>
+
+## 5. GUI
+
+The script uses tkinter to create a GUI. The GUI includes a text area to display the source code, buttons to open a source code file and generate the documentation, and a text area to display the generated documentation.
+
+Functions associated with the GUI:
+
+- `openFile()`: This function opens a file dialog to select a text file. It displays the content of the file in the text area.
+
+- `GptFile()`: This function calls `openaiTraduction()` with the text from the text area as the argument. It displays the returned text in the second text area.
+
+- `download_clicked()`: This function calls `writeOutput()` with the text from the second text area and the file name as arguments.
+
+- `save_file()`: This function opens a file dialog to save the generated documentation to a markdown file.
+
+<a name="app_launch"/>
+## 6. Launch the application 
 The script can be run from the command line with the following syntax:
 ```
 python DocGen.py 
 ```
-# Functional Documentation
+
+<a name="functionalDoc"/>
+
+# 7. Functional Documentation
 
 This script is designed to generate a technical and functional markdown documentation of a Python script using OpenAI. 
 
