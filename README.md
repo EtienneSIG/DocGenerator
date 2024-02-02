@@ -6,7 +6,7 @@ From script to markdown description files in few seconds
 
 ## Python requirement
 ### version
-Version >= 3.1X
+Version >= 3.1X (https://www.python.org/downloads/)
 
 ## Mandatory - Configuration
 The script uses a configuration file (config.json) to load the following parameters:
