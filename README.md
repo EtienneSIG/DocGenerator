@@ -75,6 +75,7 @@ Functions associated with the GUI:
 - `save_file()`: This function opens a file dialog to save the generated documentation to a markdown file.
 
 <a name="app_launch"/>
+
 ## 6. Launch the application 
 The script can be run from the command line with the following syntax:
 ```
@@ -83,7 +84,7 @@ python DocGen.py
 
 <a name="functionalDoc"/>
 
-# 7. Functional Documentation
+## 7. Functional Documentation
 
 This script is designed to generate a technical and functional markdown documentation of a Python script using OpenAI. 
 
