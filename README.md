@@ -8,16 +8,6 @@ From script to markdown description files in few seconds
 ### version
 Version >= 3.1X
 
-### Dependencies
-- ntpath
-- argparse
-- os
-- sys
-- re
-- openai
-- nltk
-- json
-
 ## Mandatory - Configuration
 The script uses a configuration file (config.json) to load the following parameters:
 - OPENAI_API_KEY: The API key for OpenAI.
@@ -29,10 +19,8 @@ The script uses a configuration file (config.json) to load the following paramet
 ## Command Line Execution
 The script can be run from the command line with the following syntax:
 ```
-python DocGen.py -f <filename>
+python DocGen.py 
 ```
-where `<filename>` is the name of the file to be translated.
-
 # Functional Documentation
 
 This script is designed to generate a technical and functional markdown documentation of a Python script using OpenAI. 
