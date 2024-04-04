@@ -4,7 +4,7 @@ import os
 import sys
 import subprocess
 
-#Open Library
+#OpenAI Library
 from openai import AzureOpenAI
 import nltk
 
@@ -81,7 +81,7 @@ print("####################################################")
 def get_token_count(prompt):
     return len(nltk.word_tokenize(prompt))
 
-def openaiTraduction(prompt,endpoint,key,model_id,api_version):
+def openaiTraduction(prompt,endpoint,key,model_id,api_version,nb_token_max):
 
     #Query openAI
 
@@ -94,12 +94,14 @@ def openaiTraduction(prompt,endpoint,key,model_id,api_version):
         api_key = key
         #api_key=os.getenv("AZURE_OPENAI_KEY"),  
     )
+    nb_token=get_token_count(prompt)
 
     prompt=[{"role": "user", "content": prompt }]
+    print(nb_token)
     completion = client.chat.completions.create(model=model_id,
                                                   messages=prompt,
                                                   #max_tokens=get_token_count(prompt)*2 +96,
-                                                  max_tokens=20000,
+                                                  max_tokens=nb_token_max-nb_token,
                                                   # stop=".",
                                                   temperature=0.7,
                                                   n=1,
@@ -110,6 +112,7 @@ def openaiTraduction(prompt,endpoint,key,model_id,api_version):
                                                   )
 
     answer = f"{completion.choices[0].message.content}"
+    print("End of doc generation")
     return answer
 
 #not use
@@ -136,7 +139,7 @@ windows_height=400
 root = tk.Tk()
 root.geometry('1000x600')
 root.resizable(False, False)
-root.title('Button Demo')
+root.title('Generate documentation from source code')
 
 ##init var 
 GPT_PROMPT = StringVar(root, name = "")
@@ -177,7 +180,7 @@ file_button.grid(column=0, row=1, sticky='nswe', padx=10, pady=10)
 
 #Documentation generation
 def GptFile():
-    gptanswer = openaiTraduction(GPT_PROMPT.get(),gpt_endpoint,gpt_key,gpt_model_id,gpt_api_version)
+    gptanswer = openaiTraduction(GPT_PROMPT.get(),gpt_endpoint,gpt_key,gpt_model_id,gpt_api_version,gpt_token_max)
     MD_DOC.set(gptanswer)
     gptarea.insert("1.0", gptanswer)
     gptarea.mark_names()
